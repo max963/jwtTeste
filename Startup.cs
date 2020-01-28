@@ -31,7 +31,6 @@ namespace Threenine.DocumentManagement.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.Configure<TokenManagement>(Configuration.GetSection("tokenManagement"));
             var token = Configuration.GetSection("tokenManagement").Get<TokenManagement>();
             services.AddAuthentication(x => {
@@ -76,7 +75,6 @@ namespace Threenine.DocumentManagement.Api
             {
                 endpoints.MapControllers();
             });
-            app.UseMvc();
         }
     }
 }
