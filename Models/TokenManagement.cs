@@ -16,8 +16,5 @@ namespace api.Models
         [JsonProperty("refreshExpiration")]
         public int RefreshExpiration { get; set; }
 
-        // public void ConfigureServices(IServiceCollection services){
-            
-        // }
     }
 }

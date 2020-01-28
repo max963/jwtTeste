@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using api.Models;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using api.Interfaces;
+using api.Services;
 
 namespace Threenine.DocumentManagement.Api
 {
@@ -49,7 +51,8 @@ namespace Threenine.DocumentManagement.Api
                 };
             });
 
-
+            services.AddScoped<IAuthenticateService, TokenAuthenticationService>();
+            services.AddScoped<IUserManagementService, UserManagementService>();
 
             services.AddControllers();
         }
